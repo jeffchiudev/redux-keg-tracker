@@ -11,3 +11,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.jumbotron {
+  background-image: url(./img/DKHeader.png);
+  background-size: 300px;
+  background-repeat: repeat-x;
+  background-position: center;
+}
+
+body {
+  background-image: url(./img/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.keg {
+  color:rgb(219, 112, 112);
+  margin-left: 200px;
+}

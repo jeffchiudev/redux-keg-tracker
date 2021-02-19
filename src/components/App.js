@@ -7,7 +7,9 @@ function App(){
     <React.Fragment>
       <div class="container">
         <Header/>
-        <KegControl/>
+        <div class="keg">
+          <KegControl/>
+        </div>
       </div>
     </React.Fragment>
   );
