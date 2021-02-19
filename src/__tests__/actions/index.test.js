@@ -24,7 +24,7 @@ describe('help quue actions', () => {
       quantity: '124',
       id: 1,}))
     .toEqual({
-      type: c.ADD_KEG,
+      type: 'ADD_KEG',
       name: 'Pilsner',
       brand: 'Molson',
       price: '20',
