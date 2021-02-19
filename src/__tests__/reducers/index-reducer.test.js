@@ -2,6 +2,7 @@ import rootReducer from '../../reducers/index';
 import { createStore } from 'redux';
 import formVisibleReducer from '../../reducers/form-visible-reducer';
 import kegListReducer from '../../reducers/keg-list-reducer';
+import editingReducer from '../../reducers/edit-reducer';
 
 let store = createStore(rootReducer);
 
@@ -11,6 +12,7 @@ describe ("rootReducer", () => {
     expect(rootReducer({}, { type: null })).toEqual({
       masterKegList: {},
       formVisibleOnPage: false,
+      editing: false
     });
   });
 
@@ -42,6 +44,14 @@ describe ("rootReducer", () => {
     }
     store.dispatch(action);
     expect(store.getState().formVisibleOnPage).toEqual(formVisibleReducer(undefined, action));
+  });
+
+  test('Check that TOGGLE_EDIT action works for formVisible and rootReducer', () => {
+    const action = {
+      type: 'TOGGLE_EDIT'
+    }
+    store.dispatch(action);
+    expect(store.getState().editing).toEqual(editingReducer(undefined, action));
   });
 
 });

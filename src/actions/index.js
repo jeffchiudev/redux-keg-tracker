@@ -18,4 +18,8 @@ export const addKeg = (keg) => {
     quantity,
     id
   }
-}
+};
+
+export const toggleEdit = () => ({
+  type: 'TOGGLE_EDIT'
+});
