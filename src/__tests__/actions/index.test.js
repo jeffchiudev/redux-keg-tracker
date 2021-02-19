@@ -15,4 +15,23 @@ describe('help quue actions', () => {
     });
   });
 
+  it('addTicket should create ADD_TICKET action', () => {
+    expect(actions.addKeg({ 
+      name: 'Pilsner',
+      brand: 'Molson',
+      price: '20',
+      flavor: 'water',
+      quantity: '124',
+      id: 1,}))
+    .toEqual({
+      type: c.ADD_KEG,
+      name: 'Pilsner',
+      brand: 'Molson',
+      price: '20',
+      flavor: 'water',
+      quantity: '124',
+      id: 1,
+    })
+  })
+
 });
