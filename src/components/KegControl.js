@@ -68,6 +68,7 @@ class KegControl extends React.Component {
   }
 
   handleSellingPint = (sell) => {
+    const { dispatch } = this.props;
     const selectedKeg = this.state.selectedKeg;
     let newQuantity;
     if (sell) {
@@ -75,12 +76,9 @@ class KegControl extends React.Component {
     } else {
       newQuantity = Object.assign({}, selectedKeg, { quantity: parseInt(selectedKeg.quantity) - 1});
     }
-
-    const newKegList = this.state.masterKegList
-      .filter(keg => keg.id !== this.state.selectedKeg.id)
-      .concat(newQuantity);
+    const action = a.addKeg(newQuantity);
+    dispatch(action);
     this.setState({
-      masterKegList: newKegList,
       selectedKeg: newQuantity
     });
   }
