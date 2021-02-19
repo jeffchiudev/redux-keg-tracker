@@ -30,7 +30,9 @@ class KegControl extends React.Component {
   }
 
   handleEditClick = () => {
-    this.setState({editing:true});
+    const { dispatch } = this.props;
+    const action = a.toggleEdit();
+    dispatch(action);
   }
 
   handleAddingNewKegToList = (newKeg) => {
@@ -50,8 +52,9 @@ class KegControl extends React.Component {
     const { dispatch } = this.props;
     const action = a.addKeg(kegToEdit)
     dispatch(action);
+    const action2 = a.toggleEdit();
+    dispatch(action2)
     this.setState({
-      editing: false,
       selectedKeg: null
     });
   }
@@ -85,7 +88,7 @@ class KegControl extends React.Component {
     let currentlyVisibleState = null;
     let buttonText = null;
     
-    if (this.state.editing) {
+    if (this.props.editing) {
       currentlyVisibleState = <EditKegForm keg = {this.state.selectedKeg} onEditKeg = {this.handleEditingKegInList}/>
       buttonText = "Return to Keg List";
     } else if (this.state.selectedKeg != null) {
@@ -109,13 +112,15 @@ class KegControl extends React.Component {
 
 KegControl.propTypes = {
   masterKegList: PropTypes.object,
-  formVisibleOnPage: PropTypes.bool
+  formVisibleOnPage: PropTypes.bool,
+  editing: PropTypes.bool
 };
 
 const mapStateToProps = state => {
   return {
     masterKegList: state.masterKegList,
-    formVisibleOnPage: state.formVisibleOnPage
+    formVisibleOnPage: state.formVisibleOnPage,
+    editing: state.editing
   }
 }
 
