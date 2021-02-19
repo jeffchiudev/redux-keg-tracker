@@ -3,6 +3,8 @@ import NewKegForm from './NewKegForm';
 import KegList from './KegList';
 import KegDetail from './KegDetail';
 import EditKegForm from './EditKegForm';
+import { connect } from 'react-redux';
+import Keg from './Keg';
 
 class KegControl extends React.Component {
 
@@ -10,7 +12,6 @@ class KegControl extends React.Component {
     super(props);
     this.state = {
       formVisibleOnPage: false,
-      masterKegList: [],
       selectedKeg: null,
       editing: false
     };
@@ -35,11 +36,19 @@ class KegControl extends React.Component {
   }
 
   handleAddingNewKegToList = (newKeg) => {
-    const newMasterKegList = this.state.masterKegList.concat(newKeg);
-    this.setState({
-      masterKegList: newMasterKegList,
-      formVisibleOnPage: false 
-    });
+    const { dispatch } = this.props;
+    const { id, name, brand, price, flavor, quantity } = newKeg;
+    const action = {
+      type: 'ADD_KEG',
+      id,
+      name,
+      brand,
+      price,
+      flavor,
+      quantity,
+    }
+    dispatch(action);
+    this.setState({formVisibleOnPage: false});
   }
 
   handleChangingSelectedKeg = (id) => {
@@ -48,20 +57,32 @@ class KegControl extends React.Component {
   }
 
   handleEditingKegInList = (kegToEdit) => {
-    const editedMasterKegList = this.state.masterKegList
-      .filter(keg => keg.id !== this.state.selectedKeg.id)
-      .concat(kegToEdit);
+    const { dispatch } = this.props;
+    const {  id, name, brand, price, flavor, quantity } = kegToEdit;
+    const action = {
+      type: 'ADD_KEG',
+      id,
+      name,
+      brand,
+      price,
+      flavor,
+      quantity,
+    }
+    dispatch(action);
     this.setState({
-      masterKegList: editedMasterKegList,
       editing: false,
       selectedKeg: null
-    })
+    });
   }
 
   handleDeletingKeg = (id) => {
-    const newMasterKegList = this.state.masterKegList.filter(keg => keg.id !== id);
+    const { dispatch } = this.props;
+    const action = {
+      type: 'DELETE_KEG',
+      id,
+    }
+    dispatch(action);
     this.setState({
-      masterKegList: newMasterKegList,
       selectedKeg: null
     });
   }
@@ -108,7 +129,8 @@ class KegControl extends React.Component {
       </React.Fragment>
     );
   }
-
 }
+
+KegControl = connect()(KegControl);
 
 export default KegControl;
