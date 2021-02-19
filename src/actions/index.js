@@ -1,16 +1,18 @@
+import * as c from './ActionTypes'
+
 export const deleteKeg = id => ({
-  type: 'DELETE_KEG',
+  type: c.DELETE_KEG,
   id,
 });
 
 export const toggleForm = id => ({
-  type: 'TOGGLE_FORM'
+  type: c.TOGGLE_FORM,
 });
 
 export const addKeg = (keg) => {
   const {  name, brand, price, flavor, quantity, id} = keg;
   return {
-    type: 'ADD_KEG',
+    type: c.ADD_KEG,
     name,
     brand,
     price,
@@ -21,5 +23,5 @@ export const addKeg = (keg) => {
 };
 
 export const toggleEdit = () => ({
-  type: 'TOGGLE_EDIT'
+  type: c.TOGGLE_EDIT,
 });

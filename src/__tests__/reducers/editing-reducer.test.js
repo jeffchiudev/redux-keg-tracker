@@ -1,4 +1,5 @@
 import editingReducer from '../../reducers/edit-reducer';
+import * as c from './../../actions/ActionTypes';
 
 describe ("editingReducer", () => {
 
@@ -7,6 +8,6 @@ describe ("editingReducer", () => {
   });
 
   test('should toggle visibility state to true', () => {
-    expect(editingReducer(false, { type: 'TOGGLE_EDIT'})).toEqual(true);
+    expect(editingReducer(false, { type: c.TOGGLE_EDIT})).toEqual(true);
   });
 })
