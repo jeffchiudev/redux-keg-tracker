@@ -1,10 +1,10 @@
 <div align="center">
 
-# Taproom Keg Manager v1.0
+# Taproom Keg Manager Redux v2.0
 
 <img src="https://github.com/jeffchiudev.png" width="200px" height="auto" style="border-radius: 15px 50px;"><br>
 ________________________
-<h3>Taproom Keg management system, 12.Feb.2021</h3>
+<h3>Taproom Keg management system, 19.Feb.2021</h3>
 <h4> By Jeff Chiu</h4>
 </div>
 
@@ -28,7 +28,10 @@ Taprooms have to have a great selection, but they also need to be able to manage
 
 - Windows 10
 - Visual Studio Code
+- Node.js
 - React
+- Redux
+- Bootstrap
 - Javascript
 - [Draw.io](https://www.draw.io/)
 
@@ -59,17 +62,17 @@ Currently, the app doesn't save keg data between sessions.
 
 ### Open Locally
 
-1. Click on the link to repository on github [here](https://github.com/jeffchiudev/tap-room). 
+1. Click on the link to repository on github [here](https://github.com/jeffchiudev/redux-keg-tracker). 
 2. Click on the green "Code" link near the top and above the README.md.
-3. Alternatively open your terminal and use the command `git clone https://github.com/jeffchiudev/tap-room` into the directory you would like to clone the repository.
+3. Alternatively open your terminal and use the command `git clone https://github.com/jeffchiudev/redux-keg-tracker` into the directory you would like to clone the repository.
 4. Open in text editor to view code.
-5. Run command `npm install`, `npm run build` and `npm start` to view in browser.  
+5. Run commands `npm install`, `npm run build` and `npm start` to view in browser.  
 
 ## Support and Contact Details
 
 If any errors or bugs occur please email me [here](jeffchiudev@gmail.com)
 
-For bugs or pull requests click [here](https://github.com/jeffchiudev/tap-room/issues)
+For bugs or pull requests click [here](https://github.com/jeffchiudev/redux-keg-tracker/issues)
 
 ## License
 
