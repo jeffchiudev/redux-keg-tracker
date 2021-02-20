@@ -17,6 +17,7 @@ code {
   background-size: 300px;
   background-repeat: space;
   background-position: center;
+  border: 10px solid;
 }
 
 body {
