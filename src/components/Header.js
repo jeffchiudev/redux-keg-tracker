@@ -3,7 +3,7 @@ import React from "react";
 function Header(){
   return (
     <div class="jumbotron bg-transparent">
-      <h1 style={{textAlign: 'center', color: '#558fed'}}>Keg Tracker (Redux)</h1>
+      <h1 style={{paddingLeft: '200px', paddingTop: '100px', color: '#b732f0', fontFamily: 'fantasy'}}>Keg Tracker (Redux)</h1>
     </div>
   );
 }

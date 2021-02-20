@@ -12,11 +12,11 @@ function ReusableForm(props) {
         <input
           type='text'
           name='brand'
-          placeholder='Keg Brand'/>
+          placeholder='Keg Brand'/><br/>
         <input
           type='text'
           name='price'
-          placeholder='Keg Price'/><br/>
+          placeholder='Keg Price'/>
         <input
           type='text'
           name='flavor'
